@@ -1,0 +1,252 @@
+.palettePreview {
+    .previewHeading {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+
+        h2 {
+            color: #344439;
+            font-size: 14px;
+            font-weight: 750;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin-top: 3px;
+            color: #7a857c;
+            font-size: 10px;
+        }
+
+        > span {
+            border: 1px solid #dce5d8;
+            border-radius: 999px;
+            background: #f7faf4;
+            padding: 4px 8px;
+            color: #638065;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+        }
+    }
+
+    .previewFrame {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 13px;
+        padding: 24px;
+    }
+
+    .storefront {
+        overflow: hidden;
+        border: 1px solid rgb(39 59 50 / 11%);
+        border-radius: 9px;
+        background: #fffdf8;
+        box-shadow: 0 12px 35px rgb(39 59 50 / 9%);
+    }
+
+    .storeHeader {
+        display: flex;
+        min-height: 49px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1px solid;
+        padding: 0 18px;
+
+        .storeBrand {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 13px;
+            font-weight: 700;
+
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        nav {
+            display: flex;
+            gap: 17px;
+            color: #677269;
+            font-size: 9px;
+        }
+
+        > button {
+            display: inline-flex;
+            width: 29px;
+            height: 29px;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            border: 0;
+            border-radius: 6px;
+
+            svg {
+                width: 13px;
+                height: 13px;
+            }
+
+            span {
+                font-size: 8px;
+            }
+        }
+    }
+
+    .storeHero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 20px;
+        padding: 25px 34px 28px;
+    }
+
+    .heroCopy {
+        .storeLabel {
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+        }
+
+        h3 {
+            max-width: 330px;
+            margin-top: 8px;
+            color: #2b3930;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(24px, 3vw, 38px);
+            letter-spacing: -0.05em;
+            line-height: 1.04;
+        }
+
+        p {
+            max-width: 330px;
+            margin-top: 9px;
+            color: #758078;
+            font-size: 10px;
+            line-height: 1.65;
+        }
+
+        button {
+            display: inline-flex;
+            min-height: 32px;
+            align-items: center;
+            gap: 6px;
+            margin-top: 13px;
+            border: 0;
+            border-radius: 5px;
+            padding: 0 10px;
+            font-size: 9px;
+            font-weight: 700;
+            transition: box-shadow 140ms ease;
+
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+
+            &:hover {
+                box-shadow: 0 0 0 3px rgb(39 59 50 / 13%);
+            }
+        }
+    }
+
+    .artCard {
+        position: relative;
+        display: grid;
+        min-height: 188px;
+        overflow: hidden;
+        place-items: center;
+        border-radius: 6px;
+
+        .artSun {
+            position: absolute;
+            top: 26px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        .artStem {
+            position: absolute;
+            bottom: 0;
+            left: 49%;
+            width: 5px;
+            height: 80%;
+            border-radius: 100% 100% 0 0;
+            transform: rotate(5deg);
+            transform-origin: bottom;
+        }
+
+        .artLeaf,
+        .artLeafSecond {
+            position: absolute;
+            bottom: 55px;
+            left: 29%;
+            width: 67px;
+            height: 32px;
+            border-radius: 100% 0 100% 0;
+            transform: rotate(25deg);
+        }
+
+        .artLeafSecond {
+            bottom: 102px;
+            left: 49%;
+            width: 60px;
+            height: 29px;
+            border-radius: 0 100% 0 100%;
+            transform: rotate(-28deg);
+        }
+    }
+
+    .storeFoot {
+        display: flex;
+        min-height: 34px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 0 17px;
+        font-size: 8px;
+        font-weight: 600;
+    }
+
+    .previewNote {
+        margin-top: 8px;
+        color: #899187;
+        font-size: 9px;
+    }
+
+    @media (max-width: 650px) {
+        .previewFrame {
+            padding: 10px;
+        }
+
+        .storeHeader {
+            padding-inline: 10px;
+
+            nav {
+                gap: 8px;
+            }
+        }
+
+        .storeHero {
+            grid-template-columns: 1fr;
+            gap: 15px;
+            padding: 20px 18px;
+        }
+
+        .artCard {
+            min-height: 140px;
+        }
+
+        .storeFoot {
+            flex-wrap: wrap;
+            padding-block: 8px;
+        }
+    }
+}
