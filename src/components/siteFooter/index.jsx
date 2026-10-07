@@ -1,8 +1,8 @@
-import { LuCoffee, LuExternalLink, LuGithub, LuGlobe2, LuHeart, LuLinkedin, LuMail, LuPalette, LuYoutube } from "react-icons/lu";
+import { LuCoffee, LuExternalLink, LuGithub, LuGlobe, LuHeart, LuLinkedin, LuMail, LuPalette, LuYoutube } from "react-icons/lu";
 import styles from "./styles.module.css";
 
 const links = [
-    { label: "Portfolio", href: "https://www.ashishranjan.net", icon: LuGlobe2 },
+    { label: "Portfolio", href: "https://www.ashishranjan.net", icon: LuGlobe },
     { label: "GitHub", href: "https://github.com/a2rp", icon: LuGithub },
     { label: "CodePen", href: "https://codepen.io/ash1198", icon: LuPalette },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/aashishranjan", icon: LuLinkedin },

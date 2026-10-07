@@ -1,3 +1,170 @@
 .appShell {
     min-height: 100vh;
+    padding-top: 62px;
+
+    .mainContent {
+        width: min(1080px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 32px 0 44px;
+    }
+
+    .intro {
+        position: relative;
+        display: flex;
+        min-height: 185px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        overflow: hidden;
+        margin-bottom: 18px;
+        border: 1px solid #dfe4da;
+        border-radius: 14px;
+        background: linear-gradient(112deg, #eef3e9, #f7f4ec 67%, #f4e9e0);
+        padding: 24px 30px;
+
+        .introCopy {
+            position: relative;
+            z-index: 1;
+            max-width: 535px;
+
+            h1 {
+                margin-top: 5px;
+                color: #2e4436;
+                font-family: Georgia, "Times New Roman", serif;
+                font-size: clamp(32px, 5vw, 48px);
+                font-weight: 700;
+                letter-spacing: -0.055em;
+                line-height: 1.02;
+            }
+
+            > p {
+                max-width: 525px;
+                margin-top: 8px;
+                color: #6f7d71;
+                font-size: 11px;
+                line-height: 1.7;
+            }
+        }
+    }
+
+    .introIcon {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #5e7b60;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+
+        svg {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    .scrollLink {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+        color: #405e45;
+        font-size: 9px;
+        font-weight: 750;
+
+        svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    .introNote {
+        position: relative;
+        z-index: 1;
+        width: 205px;
+        flex: 0 0 auto;
+        border: 1px solid rgb(81 111 86 / 20%);
+        border-radius: 9px;
+        background: rgb(255 255 255 / 58%);
+        padding: 12px;
+        backdrop-filter: blur(8px);
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #4e6d53;
+            font-size: 9px;
+            font-weight: 750;
+
+            svg {
+                width: 13px;
+                height: 13px;
+            }
+        }
+
+        p {
+            margin-top: 6px;
+            color: #778278;
+            font-size: 9px;
+            line-height: 1.6;
+        }
+    }
+
+    .orbOne,
+    .orbTwo {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .orbOne {
+        top: -79px;
+        right: 160px;
+        width: 210px;
+        height: 210px;
+        border: 1px solid rgb(87 119 93 / 15%);
+        box-shadow: 0 0 0 22px rgb(255 255 255 / 13%), 0 0 0 46px rgb(255 255 255 / 9%);
+    }
+
+    .orbTwo {
+        right: 280px;
+        bottom: -65px;
+        width: 105px;
+        height: 105px;
+        background: rgb(210 178 135 / 19%);
+    }
+
+    .workspace {
+        display: grid;
+        gap: 18px;
+    }
+
+    @media (max-width: 650px) {
+        padding-top: 56px;
+
+        .mainContent {
+            width: calc(100% - 26px);
+            padding-top: 16px;
+        }
+
+        .intro {
+            min-height: 0;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 13px;
+            padding: 20px 17px;
+        }
+
+        .introNote {
+            width: min(280px, 100%);
+        }
+
+        .orbOne {
+            right: -85px;
+        }
+
+        .orbTwo {
+            display: none;
+        }
+    }
 }
