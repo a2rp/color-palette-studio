@@ -80,7 +80,9 @@
         font-size: 10px;
         font-weight: 700;
         white-space: nowrap;
-        transition: border-color 140ms ease, box-shadow 140ms ease;
+        transition:
+            border-color 140ms ease,
+            box-shadow 140ms ease;
 
         svg {
             width: 14px;

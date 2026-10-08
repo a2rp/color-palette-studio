@@ -9,8 +9,11 @@ const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
 export const hexToHsl = (hex) => {
     const normalized = hex.replace("#", "");
-    if (!/^[\da-f]{6}$/i.test(normalized)) throw new Error("Enter a six-digit hex color.");
-    const channels = [0, 2, 4].map((start) => parseInt(normalized.slice(start, start + 2), 16) / 255);
+    if (!/^[\da-f]{6}$/i.test(normalized))
+        throw new Error("Enter a six-digit hex color.");
+    const channels = [0, 2, 4].map(
+        (start) => parseInt(normalized.slice(start, start + 2), 16) / 255,
+    );
     const [red, green, blue] = channels;
     const max = Math.max(red, green, blue);
     const min = Math.min(red, green, blue);
@@ -46,7 +49,14 @@ export const hslToHex = (hue, saturation, lightness) => {
     else [red, blue] = [chroma, second];
 
     const offset = lightness - chroma / 2;
-    return `#${[red, green, blue].map((channel) => Math.round((channel + offset) * 255).toString(16).padStart(2, "0")).join("").toUpperCase()}`;
+    return `#${[red, green, blue]
+        .map((channel) =>
+            Math.round((channel + offset) * 255)
+                .toString(16)
+                .padStart(2, "0"),
+        )
+        .join("")
+        .toUpperCase()}`;
 };
 
 export const generatePalette = (baseHex, scheme) => {
@@ -55,18 +65,27 @@ export const generatePalette = (baseHex, scheme) => {
     const saturationOffsets = [-0.07, 0.01, 0, 0.03, -0.08];
     const lightnessOffsets = [0.2, 0.1, 0, -0.1, -0.2];
 
-    return steps.map((step, index) => hslToHex(
-        base.hue + step,
-        clamp(base.saturation + saturationOffsets[index], 0, 1),
-        clamp(base.lightness + lightnessOffsets[index], 0.2, 0.86),
-    ));
+    return steps.map((step, index) =>
+        hslToHex(
+            base.hue + step,
+            clamp(base.saturation + saturationOffsets[index], 0, 1),
+            clamp(base.lightness + lightnessOffsets[index], 0.2, 0.86),
+        ),
+    );
 };
 
 const relativeLuminance = (hex) => {
-    if (!/^#[\da-f]{6}$/i.test(hex)) throw new Error("Enter a six-digit hex color.");
+    if (!/^#[\da-f]{6}$/i.test(hex))
+        throw new Error("Enter a six-digit hex color.");
     const color = hex.replace("#", "");
-    const channels = [0, 2, 4].map((start) => parseInt(color.slice(start, start + 2), 16) / 255);
-    const linear = channels.map((channel) => channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4);
+    const channels = [0, 2, 4].map(
+        (start) => parseInt(color.slice(start, start + 2), 16) / 255,
+    );
+    const linear = channels.map((channel) =>
+        channel <= 0.04045
+            ? channel / 12.92
+            : ((channel + 0.055) / 1.055) ** 2.4,
+    );
     return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
 };
 
@@ -76,4 +95,7 @@ export const contrastRatio = (firstHex, secondHex) => {
     return (Math.max(first, second) + 0.05) / (Math.min(first, second) + 0.05);
 };
 
-export const readableInk = (hex) => contrastRatio(hex, "#FFFFFF") >= contrastRatio(hex, "#273B32") ? "#FFFFFF" : "#273B32";
+export const readableInk = (hex) =>
+    contrastRatio(hex, "#FFFFFF") >= contrastRatio(hex, "#273B32")
+        ? "#FFFFFF"
+        : "#273B32";

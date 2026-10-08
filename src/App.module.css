@@ -123,7 +123,9 @@
         width: 210px;
         height: 210px;
         border: 1px solid rgb(87 119 93 / 15%);
-        box-shadow: 0 0 0 22px rgb(255 255 255 / 13%), 0 0 0 46px rgb(255 255 255 / 9%);
+        box-shadow:
+            0 0 0 22px rgb(255 255 255 / 13%),
+            0 0 0 46px rgb(255 255 255 / 9%);
     }
 
     .orbTwo {

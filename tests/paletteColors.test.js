@@ -1,6 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { contrastRatio, generatePalette, hexToHsl, hslToHex, readableInk } from "../src/utils/paletteColors.js";
+import {
+    contrastRatio,
+    generatePalette,
+    hexToHsl,
+    hslToHex,
+    readableInk,
+} from "../src/utils/paletteColors.js";
 
 test("converts hex colors to and from HSL", () => {
     const color = "#5B68E8";

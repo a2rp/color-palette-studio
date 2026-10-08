@@ -62,7 +62,9 @@
         color: #3f5946;
         font-size: 10px;
         font-weight: 700;
-        transition: border-color 140ms ease, box-shadow 140ms ease;
+        transition:
+            border-color 140ms ease,
+            box-shadow 140ms ease;
 
         svg {
             width: 14px;
@@ -163,7 +165,9 @@
         color: white;
         font-size: 10px;
         font-weight: 700;
-        transition: border-color 140ms ease, box-shadow 140ms ease;
+        transition:
+            border-color 140ms ease,
+            box-shadow 140ms ease;
 
         svg {
             width: 14px;
@@ -311,7 +315,9 @@
             border-radius: 5px;
             background: transparent;
             color: #718070;
-            transition: border-color 130ms ease, box-shadow 130ms ease;
+            transition:
+                border-color 130ms ease,
+                box-shadow 130ms ease;
 
             svg {
                 width: 13px;
