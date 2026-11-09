@@ -61,17 +61,20 @@ export const hslToHex = (hue, saturation, lightness) => {
 
 export const generatePalette = (baseHex, scheme) => {
     const base = hexToHsl(baseHex);
+    const normalizedBaseHex = `#${baseHex.replace("#", "").toUpperCase()}`;
     const steps = hueSteps[scheme] ?? hueSteps.analogous;
     const saturationOffsets = [-0.07, 0.01, 0, 0.03, -0.08];
     const lightnessOffsets = [0.2, 0.1, 0, -0.1, -0.2];
 
-    return steps.map((step, index) =>
-        hslToHex(
+    return steps.map((step, index) => {
+        if (index === 2) return normalizedBaseHex;
+
+        return hslToHex(
             base.hue + step,
             clamp(base.saturation + saturationOffsets[index], 0, 1),
             clamp(base.lightness + lightnessOffsets[index], 0.2, 0.86),
-        ),
-    );
+        );
+    });
 };
 
 const relativeLuminance = (hex) => {
